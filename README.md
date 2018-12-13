@@ -1,7 +1,19 @@
 ### Description
 
-A project related to how to configure and use terraform `module`
+This repo contains reusable terraform `module`
 
+### Using the module
+
+To use a module from this repository, add a block like the following to your terraform code:
+```
+module "server" {
+  source = "github.com/galindonkov/terraform-variables"
+}
+
+output "new_server_names" {
+  value = "${ module.server.players }"
+}
+```
 ### Prerequisites
 
 - Terraform installation : [Installation process ](https://learn.hashicorp.com/terraform/getting-started/install.html)
